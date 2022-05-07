@@ -120,7 +120,7 @@ export const modals = () => {
     bindModal({
         triggersSelector: '.button-consultation',
         modalSelector: '.popup-consultation',
-        closeSelector: '.popup-consultation .popup-content'
+        closeSelector: '.popup-consultation .popup-close'
     });
     bindModal({
         triggersSelector: '.fixed-gift',

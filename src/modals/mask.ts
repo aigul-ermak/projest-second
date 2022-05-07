@@ -1,5 +1,6 @@
 export function mask(selector: string) {
-    const setCursorPosition = (pos: any, elem: any) => {
+
+    const setCursorPosition = (pos: string, elem: any) => {
         elem.focus();
 
         if (elem.setSelectionRange) {
@@ -14,7 +15,7 @@ export function mask(selector: string) {
         }
     };
 
-    function createMask(e: any) {
+    function createMask(e: MouseEvent) {
         let matrix = '+7(___)___ __ __',
             i = 0,
             def = matrix.replace(/\D/g, ''),

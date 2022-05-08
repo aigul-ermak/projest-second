@@ -5,6 +5,7 @@ const webpack = require("webpack-stream");
 const browsersync = require("browser-sync");
 
 const dist = "./dist/";
+// const dist = "C:/MAMP/htdocs/test";
 
 gulp.task("copy-html", () => {
     return gulp.src("./src/index.html")
@@ -18,7 +19,7 @@ gulp.task("build-ts", () => {
             mode: 'development',
             entry: './src/ts/main.ts',
             output: {
-                filename: 'script.ts'
+                filename: 'script.js'
             },
             watch: true,
             devtool: "source-map",

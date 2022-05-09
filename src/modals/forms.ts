@@ -41,6 +41,7 @@ export const forms = () => {
         inputs.forEach((input: HTMLInputElement) => {
             input.value = ''
         });
+
         uploads.forEach(upload => {
             upload.previousElementSibling.textContent = 'File did not choose'
         })

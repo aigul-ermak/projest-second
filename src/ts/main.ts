@@ -1,6 +1,9 @@
-import { modals, sliders, forms } from '../modals';
+
+import { modals, sliders, forms, mask } from '../modals';
 
 window.addEventListener('DOMContentLoaded', () => {
+    'use strict'
+
     modals();
     sliders({
         slides: '.feedback-slider-item',
@@ -11,7 +14,8 @@ window.addEventListener('DOMContentLoaded', () => {
     sliders({
         slides: '.main-slider-item',
         dir: 'vertical'
-    });
+    })
     forms();
+    mask('[name="phone"]');
 });
 

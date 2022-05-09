@@ -6,7 +6,6 @@ type bindModalType = {
 };
 
 export const modals = () => {
-
     let btnPressed = false;
     const bindModal = ({
                            triggersSelector,
@@ -55,7 +54,9 @@ export const modals = () => {
         modal.addEventListener('click', (e: MouseEvent) => {
             if (e.target === modal) {
                 windows.forEach(window => window.style.display = 'none');
+
                 viewModal({modalProperty: 'none'});
+
                 document.body.style.marginRight = `${0}px`
             }
         });
@@ -77,8 +78,9 @@ export const modals = () => {
                 if (!display) {
                     document.querySelector<HTMLElement>(selector).style.display = 'block';
                     document.body.style.overflow = 'hidden';
-                    //без строки 80 работает также, ничего не прыгает?
+                  
                     const scroll = calcScroll();
+
                     document.body.style.marginRight = `${scroll}px`
                 }
             })

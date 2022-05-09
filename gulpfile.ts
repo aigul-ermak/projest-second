@@ -18,7 +18,7 @@ gulp.task("build-ts", () => {
             mode: 'development',
             entry: './src/ts/main.ts',
             output: {
-                filename: 'script.ts'
+                filename: 'script.js'
             },
             watch: true,
             devtool: "source-map",

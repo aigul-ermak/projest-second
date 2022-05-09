@@ -6,7 +6,7 @@ type slidersType = {
 }
 export const sliders = ({ slides, dir, prev, next }: slidersType) => {
     let slideIndex = 1,
-        
+
         paused: NodeJS.Timer;
 
     const allSlides = document.querySelectorAll(slides)

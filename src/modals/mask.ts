@@ -14,7 +14,7 @@ export function mask(selector: string) {
         }
     };
 
-    function createMask(e: MouseEvent) {
+    function createMask(e: InputEvent) {
         let matrix = '+7(___)___ __ __',
             i = 0,
             def = matrix.replace(/\D/g, ''),
@@ -23,9 +23,8 @@ export function mask(selector: string) {
         if (def.length >= val.length) {
             val = def;
         }
-
         this.value = matrix.replace(/./g, function (a) {
-            return /[_\d]/.test(a) && i < val.length ? val.chartAt(i++) : i >= val.length ? '' : a;
+            return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? '' : a;
         });
 
         if (e.type === 'blur') {

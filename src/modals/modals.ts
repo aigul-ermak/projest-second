@@ -18,7 +18,7 @@ export const modals = () => {
             close: HTMLElement = document.querySelector<HTMLElement>(closeSelector),
             windows: NodeListOf<HTMLElement> = document.querySelectorAll('[data-modal]'),
             scroll = calcScroll();
-        //web storm выравнивает так
+
         const viewModal = ({ modalProperty, documentProperty = ''}: { modalProperty: string, documentProperty?: string }) => {
             modal.style.display = modalProperty;
             document.body.style.overflow = documentProperty;
@@ -78,7 +78,7 @@ export const modals = () => {
                 if (!display) {
                     document.querySelector<HTMLElement>(selector).style.display = 'block';
                     document.body.style.overflow = 'hidden';
-                  
+
                     const scroll = calcScroll();
 
                     document.body.style.marginRight = `${scroll}px`

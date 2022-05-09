@@ -6,7 +6,6 @@ type bindModalType = {
 };
 
 export const modals = () => {
-
     let btnPressed = false;
     const bindModal = ({
                            triggersSelector,

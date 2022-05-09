@@ -1,7 +1,6 @@
 import { calc } from '../modals';
 
 window.addEventListener('DOMContentLoaded', () => {
-    debugger
     calc({
         size: '#size',
         material: '#material',

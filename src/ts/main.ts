@@ -12,4 +12,4 @@ window.addEventListener('DOMContentLoaded', () => {
         slides: '.main-slider-item',
         dir: 'vertical'
     });
-});
+

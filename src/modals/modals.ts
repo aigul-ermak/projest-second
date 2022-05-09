@@ -78,8 +78,9 @@ export const modals = () => {
                 if (!display) {
                     document.querySelector<HTMLElement>(selector).style.display = 'block';
                     document.body.style.overflow = 'hidden';
+                  
+                    const scroll = calcScroll();
 
-                    let scroll = calcScroll();
                     document.body.style.marginRight = `${scroll}px`
                 }
             })

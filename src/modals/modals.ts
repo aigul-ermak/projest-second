@@ -78,7 +78,7 @@ export const modals = () => {
                     document.querySelector<HTMLElement>(selector).style.display = 'block';
                     document.body.style.overflow = 'hidden';
                     //без строки 80 работает также, ничего не прыгает?
-                    let scroll = calcScroll();
+                    const scroll = calcScroll();
                     document.body.style.marginRight = `${scroll}px`
                 }
             })

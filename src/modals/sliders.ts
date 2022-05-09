@@ -6,8 +6,7 @@ type slidersType = {
 }
 export const sliders = ({ slides, dir, prev, next }: slidersType) => {
     let slideIndex = 1,
-        //слайдер работает - но NodeJS.Timer и boolean не соотвествует друг другу
-        //но слайдер работает
+        
         paused: NodeJS.Timer;
 
     const allSlides = document.querySelectorAll(slides)

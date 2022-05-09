@@ -1,7 +1,7 @@
 export const forms = () => {
     const forms: NodeListOf<HTMLElement> = document.querySelectorAll('form'),
         inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll('input'),
-        upload = document.querySelectorAll('[name ="upload"]');
+        uploads = document.querySelectorAll('[name ="upload"]');
 
     const message = {
         loading: 'Loading...',
@@ -25,14 +25,15 @@ export const forms = () => {
         return await res.text();
     };
 
-    upload.forEach((form: HTMLFormElement) => {
-        form.addEventListener('input', () => {
-            console.log(form.files[0])
-            let dots;
-            const arr = form.files[0].name.split('.');
+    uploads.forEach((upload: HTMLFormElement) => {
+        upload.addEventListener('input', () => {
+            console.log(upload.files[0])
+            const file = upload.files[0],
+                fileName = file.name.split('.')[0],
+                fileType = file.name.split('.')[1];
 
-            arr[0].length > 6 ? dots = '...' : dots = '.';
-            form.previousElementSibling.textContent = arr[0].substring(0, 6) + dots + arr[1];
+            const dots =  fileName.length > 6 ? '...' :  '.';
+            upload.previousElementSibling.textContent = fileName.substring(0, 6) + dots + fileType;
         });
     });
 
@@ -40,8 +41,9 @@ export const forms = () => {
         inputs.forEach((input: HTMLInputElement) => {
             input.value = ''
         });
-        upload.forEach(item => {
-            item.previousElementSibling.textContent = 'File did not choose'
+
+        uploads.forEach(upload => {
+            upload.previousElementSibling.textContent = 'File did not choose'
         })
     };
 

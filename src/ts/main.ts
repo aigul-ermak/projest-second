@@ -1,7 +1,9 @@
+
 import { modals, sliders, forms, mask } from '../modals';
 
 window.addEventListener('DOMContentLoaded', () => {
     'use strict'
+
     modals();
     sliders({
         slides: '.feedback-slider-item',
@@ -16,3 +18,4 @@ window.addEventListener('DOMContentLoaded', () => {
     forms();
     mask('[name="phone"]');
 });
+

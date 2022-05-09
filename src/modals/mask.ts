@@ -1,12 +1,11 @@
 export function mask(selector: string) {
-
-    const setCursorPosition = (pos: string, elem: any) => {
+    const setCursorPosition = (pos: number, elem: any) => {
         elem.focus();
 
         if (elem.setSelectionRange) {
             elem.setSelectionRange(pos, pos);
         } else if (elem.createTextRange) {
-            let range = elem.createTextRange();
+            const range = elem.createTextRange();
 
             range.collapse(true);
             range.moveEnd('character', pos);
@@ -38,9 +37,9 @@ export function mask(selector: string) {
         }
     }
 
-    const inputs: NodeListOf<HTMLElement> = document.querySelectorAll(selector);
+    const inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll(selector);
 
-    inputs.forEach((input: HTMLElement) => {
+    inputs.forEach((input: HTMLInputElement) => {
         input.addEventListener('input', createMask);
         input.addEventListener('focus', createMask);
         input.addEventListener('blur', createMask);

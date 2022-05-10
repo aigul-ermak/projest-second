@@ -1,4 +1,4 @@
-import { modals, sliders, forms, mask } from '../modals';
+import { modals, sliders, forms, mask, filter } from '../modals';
 
 window.addEventListener('DOMContentLoaded', () => {
     modals();
@@ -14,5 +14,6 @@ window.addEventListener('DOMContentLoaded', () => {
     })
     forms();
     mask('[name="phone"]');
+    filter();
 });
 

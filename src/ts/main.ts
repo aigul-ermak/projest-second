@@ -1,4 +1,4 @@
-import { modals, sliders, forms, mask, showMoreStyles, calc, filter } from '../modals';
+import { modals, sliders, forms, mask, showMoreStyles, calc, filter, pictureSize } from '../modals';
 
 window.addEventListener('DOMContentLoaded', () => {
     modals();
@@ -22,4 +22,5 @@ window.addEventListener('DOMContentLoaded', () => {
         result: '.calc-price'
     });
     filter();
+    pictureSize('.sizes-block')
 });

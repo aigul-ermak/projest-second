@@ -1,4 +1,4 @@
-import { modals, sliders, forms, mask, showMoreStyles, calc, filter, pictureSize, accordeon } from '../modals';
+import { modals, sliders, forms, mask, showMoreStyles, calc, filter, pictureSize, accordeon, drop } from '../modals';
 
 window.addEventListener('DOMContentLoaded', () => {
     modals();
@@ -25,4 +25,5 @@ window.addEventListener('DOMContentLoaded', () => {
     pictureSize('.sizes-block');
     accordeon({triggerSelector: '.accordion-heading'})
     scrolling('.pageup');
+    drop();
 });

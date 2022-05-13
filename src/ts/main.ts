@@ -1,4 +1,4 @@
-import { modals, sliders, forms, mask, showMoreStyles, calc } from '../modals';
+import { modals, sliders, forms, mask, showMoreStyles, calc, filter } from '../modals';
 
 window.addEventListener('DOMContentLoaded', () => {
     modals();
@@ -14,11 +14,12 @@ window.addEventListener('DOMContentLoaded', () => {
     })
     forms();
     mask('[name="phone"]');
-  calc({
+    calc({
         size: '#size',
         material: '#material',
         options: '#options',
         promocode: '.promocode',
         result: '.calc-price'
-    })
+    });
+    filter();
 });

@@ -36,38 +36,24 @@ export const filter = () => {
         }
     };
 
-    btnAll.addEventListener('click', () => {
-        typeFilter(markAll);
-    });
+    btnAll.addEventListener('click', () => typeFilter(markAll));
 
-    btnLovers.addEventListener('click', () => {
-        typeFilter(markLovers);
-    });
+    btnLovers.addEventListener('click', () => typeFilter(markLovers));
 
-    btnChef.addEventListener('click', () => {
-        typeFilter(markChef);
-    });
+    btnChef.addEventListener('click', () => typeFilter(markChef));
 
-    btnGuy.addEventListener('click', () => {
-        typeFilter(markGuy);
-    });
+    btnGuy.addEventListener('click', () => typeFilter(markGuy));
 
-    btnGirl.addEventListener('click', () => {
-        typeFilter(markGirl);
-    });
+    btnGirl.addEventListener('click', () => typeFilter(markGirl));
 
-    btnGrandmother.addEventListener('click', () => {
-        typeFilter();
-    });
+    btnGrandmother.addEventListener('click', () => typeFilter());
 
-    btnGranddad.addEventListener('click', () => {
-        typeFilter();
-    });
+    btnGranddad.addEventListener('click', () => typeFilter());
 
     menu.addEventListener('click', (e: MouseEvent) => {
         let target = e.target as HTMLElement;
-        if( target && target.tagName == 'LI') {
-            items.forEach(btn => btn.classList.remove( 'active'))
+        if (target && target.tagName == 'LI') {
+            items.forEach(btn => btn.classList.remove('active'))
             target.classList.add('active')
         }
     })

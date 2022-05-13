@@ -15,4 +15,3 @@ window.addEventListener('DOMContentLoaded', () => {
     forms();
     mask('[name="phone"]');
 });
-

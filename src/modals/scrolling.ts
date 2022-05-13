@@ -23,7 +23,7 @@ export const scrolling = (upSelector: any) => {
             // я должна проверить hash на null
             // Cannot read properties of null (reading 'getBoundingClientRect')
             let toBlock = document.querySelector(hash).getBoundingClientRect().top,
-                start: any = null;
+                start: number = 0;
             requestAnimationFrame(step);
 
             function step(time: number) {
@@ -80,13 +80,9 @@ export const scrolling = (upSelector: any) => {
 //             prevScrollTop: any,
 //             speed: any;
 //
-//         if (to > from) {
-//             speed = 30;
-//         } else {
-//             speed = -30
-//         }
+//             speed = to > from ? 30 : -30
 //
-//         let move = setInterval(function () {
+//         const move = setInterval(function () {
 //             let scrollTop = Math.round(body.scrollTop || element.scrollTop);
 //
 //             if (

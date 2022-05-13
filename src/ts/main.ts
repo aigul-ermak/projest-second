@@ -1,4 +1,4 @@
-import { modals, sliders, forms, mask, showMoreStyles, calc, filter, pictureSize } from '../modals';
+import { modals, sliders, forms, mask, showMoreStyles, calc, filter, pictureSize, accordeon } from '../modals';
 
 window.addEventListener('DOMContentLoaded', () => {
     modals();
@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
     })
     forms();
     mask('[name="phone"]');
-    calc({
+   calc({
         size: '#size',
         material: '#material',
         options: '#options',
@@ -22,5 +22,6 @@ window.addEventListener('DOMContentLoaded', () => {
         result: '.calc-price'
     });
     filter();
-    pictureSize('.sizes-block')
+    pictureSize('.sizes-block');
+    accordeon({triggerSelector: '.accordion-heading'})
 });

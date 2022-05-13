@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
     })
     forms();
     mask('[name="phone"]');
-   calc({
+    calc({
         size: '#size',
         material: '#material',
         options: '#options',
@@ -24,4 +24,5 @@ window.addEventListener('DOMContentLoaded', () => {
     filter();
     pictureSize('.sizes-block');
     accordeon({triggerSelector: '.accordion-heading'})
+    scrolling('.pageup');
 });

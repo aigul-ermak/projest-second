@@ -7,45 +7,47 @@ export const drop = () => {
         })
     })
 
-        function preventDefaults(e: DragEvent) {
-            e.preventDefault();
-            e.stopPropagation();
-        }
-// Не могу подобрать тип ругается на HTMLInputElement
-        function highlight(item: any) {
-           item.closest('.file_upload').style.border  = '5px solid yellow';
-            item.closest('.file_upload').style.backgroundColor = 'rgba(0,0,0, .7)';
-        }
-// Не могу подобрать тип ругается на HTMLInputElement
-        function unhighlight(item: any) {
-            item.closest('.file_upload').style.border = 'none';
-            if (item.closest('.calc_form')) {
-                item.closest('.file_upload').style.backgroundColor  = '#fff';
-            } else {
-                item.closest('.file_upload').style.backgroundColor = '#ededed';
-            }
-        }
-
-        ['dragenter', 'dragover'].forEach(eventName => {
-            fileInputs.forEach(input => {
-                input.addEventListener(eventName, () => highlight(input), false);
-            });
-        });
-
-        ['dragleave', 'drop'].forEach(eventName => {
-            fileInputs.forEach(input => {
-                input.addEventListener(eventName, () => unhighlight(input), false);
-            });
-        });
-
-        fileInputs.forEach(input => {
-            input.addEventListener('drop', (e) => {
-                input.files = e.dataTransfer.files;
-                let dots;
-                const arr = input.files[0].name.split('.');
-
-                arr[0].length > 6 ? dots = '...' : dots = '.';
-                input.previousElementSibling.textContent = arr[0].substring(0, 6) + dots + arr[1];
-            });
-        });
+    function preventDefaults(e: DragEvent) {
+        e.preventDefault();
+        e.stopPropagation();
     }
+
+    function highlight(item: Element) {
+        item.closest<HTMLElement>('.file_upload').style.border = '5px solid yellow';
+        item.closest<HTMLElement>('.file_upload').style.backgroundColor = 'rgba(0,0,0, .7)';
+    }
+
+    function unhighlight(item: Element) {
+        item.closest<HTMLInputElement>('.file_upload').style.border = 'none';
+        if (item.closest('.calc_form')) {
+            item.closest<HTMLInputElement>('.file_upload').style.backgroundColor = '#fff';
+        } else {
+            item.closest<HTMLInputElement>('.file_upload').style.backgroundColor = '#ededed';
+        }
+    }
+
+    ['dragenter', 'dragover'].forEach(eventName => {
+        fileInputs.forEach(input => {
+            input.addEventListener(eventName, () => highlight(input), false);
+        });
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+        fileInputs.forEach(input => {
+            input.addEventListener(eventName, () => unhighlight(input), false);
+        });
+    });
+
+    fileInputs.forEach(input => {
+        input.addEventListener('drop', (e) => {
+            input.files = e.dataTransfer.files;
+            const file = input.files[0],
+                fileName = file.name.split('.')[0],
+                fileType = file.name.split('.')[1],
+                dots = fileName.length > 6 ? '...' : '.',
+                name = `${fileName.substring(0, 6)}${dots}${fileType}`;
+
+            input.previousElementSibling.textContent = name;
+        });
+    });
+}

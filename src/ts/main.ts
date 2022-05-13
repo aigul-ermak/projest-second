@@ -1,4 +1,4 @@
-import { modals, sliders, forms, mask } from '../modals';
+import { modals, sliders, forms, mask, showMoreStyles } from '../modals';
 
 window.addEventListener('DOMContentLoaded', () => {
     modals();

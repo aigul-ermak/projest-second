@@ -1,4 +1,4 @@
-import {modals, sliders, forms, mask, pictureSize} from '../modals';
+import { modals, sliders, forms, mask, showMoreStyles, calc, filter, pictureSize } from '../modals';
 
 window.addEventListener('DOMContentLoaded', () => {
     modals();
@@ -14,6 +14,13 @@ window.addEventListener('DOMContentLoaded', () => {
     })
     forms();
     mask('[name="phone"]');
+    calc({
+        size: '#size',
+        material: '#material',
+        options: '#options',
+        promocode: '.promocode',
+        result: '.calc-price'
+    });
+    filter();
     pictureSize('.sizes-block')
 });
-
